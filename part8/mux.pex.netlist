@@ -1,0 +1,149 @@
+** mux.pex.netlist
+** Objective: Lab 1 Step 8: Performance analysis with parasitics
+** Author: Cole Maxwell
+** Created: Wed Sep 23 12:47:11 2020
+** Program "Calibre xRC"
+** Version "v2011.3_29.20"
+
+*------------------------------------------------------------------------
+* Parameters and models
+*------------------------------------------------------------------------
+
+* include transistor models. include command can also be used to include other spice files
+.include '$PDK_DIR/ncsu_basekit/models/hspice/hspice_nom.include'
+
+* Analysis commands
+.param vdd_val = 1.1
+Vsupply vdd 0 vdd_val
+Vgnd gnd 0 0
+
+* Digital vector file for input from same directory
+.vec 'mux_pex_input.vec'
+
+* Simulation options
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
++    POST
+
+.include "mux.pex.netlist.pex"
+
+.subckt not a gnd vdd
+m0 y a gnd gnd NMOS_VTL L=50e-9 W=90e-9 AD=9.45e-15 AS=9.45e-15 PD=300e-9 PS=300e-9 M=1
+m1 y a vdd vdd PMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+.ends not
+
+.subckt mux  GND VDD Y B A S
+* 
+* S	S
+* A	A
+* B	B
+* Y	Y
+* VDD	VDD
+* GND	GND
+mXI0/MM0 N_NET18_XI0/MM0_d N_S_XI0/MM0_g N_GND_XI0/MM0_s N_GND_XI5/MM1_b
++ NMOS_VTL L=5e-08 W=9e-08 AD=9.45e-15 AS=9.45e-15 PD=3.9e-07 PS=3.9e-07
+mXI0/MM1 N_NET18_XI0/MM1_d N_S_XI0/MM1_g N_VDD_XI0/MM1_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=1.89e-14 AS=1.89e-14 PD=5.7e-07 PS=5.7e-07
+mXI5/MM2 N_NET22_XI5/MM2_d N_A_XI5/MM2_g N_VDD_XI5/MM2_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=2.52e-14 AS=1.89e-14 PD=6.4e-07 PS=5.7e-07
+mXI5/MM3 N_NET22_XI5/MM2_d N_NET18_XI5/MM3_g N_VDD_XI5/MM3_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=2.52e-14 AS=1.89e-14 PD=6.4e-07 PS=5.7e-07
+mXI4/MM2 N_NET21_XI4/MM2_d N_S_XI4/MM2_g N_VDD_XI4/MM2_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=2.52e-14 AS=1.89e-14 PD=6.4e-07 PS=5.7e-07
+mXI4/MM3 N_NET21_XI4/MM2_d N_B_XI4/MM3_g N_VDD_XI4/MM3_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=2.52e-14 AS=1.89e-14 PD=6.4e-07 PS=5.7e-07
+mXI6/MM2 N_Y_XI6/MM2_d N_NET22_XI6/MM2_g N_VDD_XI6/MM2_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=2.52e-14 AS=1.89e-14 PD=6.4e-07 PS=5.7e-07
+mXI6/MM3 N_Y_XI6/MM2_d N_NET21_XI6/MM3_g N_VDD_XI6/MM3_s N_VDD_XI0/MM1_b
++ PMOS_VTL L=5e-08 W=1.8e-07 AD=2.52e-14 AS=1.89e-14 PD=6.4e-07 PS=5.7e-07
+mXI5/MM1 XI5/NET16 N_A_XI5/MM1_g N_GND_XI5/MM1_s N_GND_XI5/MM1_b NMOS_VTL
++ L=5e-08 W=9e-08 AD=1.26e-14 AS=9.45e-15 PD=4.6e-07 PS=3.9e-07
+mXI5/MM0 N_NET22_XI5/MM0_d N_NET18_XI5/MM0_g XI5/NET16 N_GND_XI5/MM1_b NMOS_VTL
++ L=5e-08 W=9e-08 AD=9.45e-15 AS=1.26e-14 PD=3.9e-07 PS=4.6e-07
+mXI4/MM1 XI4/NET16 N_S_XI4/MM1_g N_GND_XI4/MM1_s N_GND_XI5/MM1_b NMOS_VTL
++ L=5e-08 W=9e-08 AD=1.26e-14 AS=9.45e-15 PD=4.6e-07 PS=3.9e-07
+mXI4/MM0 N_NET21_XI4/MM0_d N_B_XI4/MM0_g XI4/NET16 N_GND_XI5/MM1_b NMOS_VTL
++ L=5e-08 W=9e-08 AD=9.45e-15 AS=1.26e-14 PD=3.9e-07 PS=4.6e-07
+mXI6/MM1 XI6/NET16 N_NET22_XI6/MM1_g N_GND_XI6/MM1_s N_GND_XI5/MM1_b NMOS_VTL
++ L=5e-08 W=9e-08 AD=1.26e-14 AS=9.45e-15 PD=4.6e-07 PS=3.9e-07
+mXI6/MM0 N_Y_XI6/MM0_d N_NET21_XI6/MM0_g XI6/NET16 N_GND_XI5/MM1_b NMOS_VTL
++ L=5e-08 W=9e-08 AD=9.45e-15 AS=1.26e-14 PD=3.9e-07 PS=4.6e-07
+*
+.include "mux.pex.netlist.MUX.pxi"
+*
+.ends
+*
+*
+x1 GND VDD Y B A S MUX
+xi24 y gnd vdd not
+xi23 y gnd vdd not
+xi22 y gnd vdd not
+xi21 y gnd vdd not
+xi20 y gnd vdd not
+xi19 y gnd vdd not
+xi18 y gnd vdd not
+xi17 y gnd vdd not
+xi16 y gnd vdd not
+xi15 y gnd vdd not
+xi14 y gnd vdd not
+xi13 y gnd vdd not
+xi12 y gnd vdd not
+xi11 y gnd vdd not
+xi10 y gnd vdd not
+xi9 y gnd vdd not
+c0 y gnd 7e-15
+
+
+
+*------------------------------------------------------------------------
+* Stimulus
+*------------------------------------------------------------------------
+
+.tran 1p 600p
+
+* 000 -> 100
+*.MEASURE TRAN tdpr_000-100 TRIG=v(a) VAL='vdd_val/2' RISE=1 TARG=v(y) VAL='vdd_val/2' RISE=1
+*.MEASURE TRAN tr_000-100 TRIG=v(y) VAL='0.2*vdd_val' RISE=1 TARG=v(y) VAL='0.8*vdd_val' RISE=1
+* 100 -> 000
+*.MEASURE TRAN tdpf_100-000 TRIG=v(a) VAL='vdd_val/2' FALL=1 TARG=v(y) VAL='vdd_val/2' FALL=1
+*.MEASURE TRAN tf_100-000 TRIG=v(y) VAL='0.8*vdd_val' FALL=1 TARG=v(y) VAL='0.2*vdd_val' FALL=1
+* 001 -> 101
+*.MEASURE TRAN tdpr_001-101 TRIG=v(a) VAL='vdd_val/2' RISE=1 TARG=v(y) VAL='vdd_val/2' RISE=1
+*.MEASURE TRAN tr_001-101 TRIG=v(y) VAL='0.2*vdd_val' RISE=1 TARG=v(y) VAL='0.8*vdd_val' RISE=1
+* 101 -> 001
+*.MEASURE TRAN tdpf_101-001 TRIG=v(a) VAL='vdd_val/2' FALL=1 TARG=v(y) VAL='vdd_val/2' FALL=1
+*.MEASURE TRAN tf_101-001 TRIG=v(y) VAL='0.8*vdd_val' FALL=1 TARG=v(y) VAL='0.2*vdd_val' FALL=1
+
+
+* 011 -> 001
+*.MEASURE TRAN tdpf_011-001 TRIG=v(s) VAL='vdd_val/2' FALL=1 TARG=v(y) VAL='vdd_val/2' FALL=1
+.MEASURE TRAN tf_011-001 TRIG=v(y) VAL='0.8*vdd_val' FALL=1 TARG=v(y) VAL='0.2*vdd_val' FALL=1
+* 001 -> 011
+*.MEASURE TRAN tdpr_001-011 TRIG=v(s) VAL='vdd_val/2' RISE=1 TARG=v(y) VAL='vdd_val/2' RISE=1
+*.MEASURE TRAN tr_001-011 TRIG=v(y) VAL='0.2*vdd_val' RISE=1 TARG=v(y) VAL='0.8*vdd_val' RISE=1
+* 110 -> 100
+*.MEASURE TRAN tdpr_110-100 TRIG=v(s) VAL='vdd_val/2' FALL=1 TARG=v(y) VAL='vdd_val/2' RISE=1
+*.MEASURE TRAN tr_110-100 TRIG=v(y) VAL='0.2*vdd_val' RISE=1 TARG=v(y) VAL='0.8*vdd_val' RISE=1
+* 100 -> 110
+*.MEASURE TRAN tdpf_100-110 TRIG=v(s) VAL='vdd_val/2' RISE=1 TARG=v(y) VAL='vdd_val/2' FALL=1
+*.MEASURE TRAN tf_100-110 TRIG=v(y) VAL='0.8*vdd_val' FALL=1 TARG=v(y) VAL='0.2*vdd_val' FALL=1
+
+
+* 111 -> 110
+*.MEASURE TRAN tdpf_111-110 TRIG=v(b) VAL='vdd_val/2' FALL=1 TARG=v(y) VAL='vdd_val/2' FALL=1
+*.MEASURE TRAN tf_111-110 TRIG=v(y) VAL='0.8*vdd_val' FALL=1 TARG=v(y) VAL='0.2*vdd_val' FALL=1
+* 110 -> 111
+*.MEASURE TRAN tdpr_110-111 TRIG=v(b) VAL='vdd_val/2' RISE=1 TARG=v(y) VAL='vdd_val/2' RISE=1
+*.MEASURE TRAN tr_110-111 TRIG=v(y) VAL='0.2*vdd_val' RISE=1 TARG=v(y) VAL='0.8*vdd_val' RISE=1
+* 010 -> 011
+*.MEASURE TRAN tdpr_010-011 TRIG=v(b) VAL='vdd_val/2' RISE=1 TARG=v(y) VAL='vdd_val/2' RISE=1
+*.MEASURE TRAN tr_010-011 TRIG=v(y) VAL='0.2*vdd_val' RISE=1 TARG=v(y) VAL='0.8*vdd_val' RISE=1
+* 011 -> 010
+*.MEASURE TRAN tdpf_011-010 TRIG=v(b) VAL='vdd_val/2' FALL=1 TARG=v(y) VAL='vdd_val/2' FALL=1
+*.MEASURE TRAN tf_011-010 TRIG=v(y) VAL='0.8*vdd_val' FALL=1 TARG=v(y) VAL='0.2*vdd_val' FALL=1
+
+.END

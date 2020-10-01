@@ -1,0 +1,62 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream Out
+Program   : @(#)$CDS: strmout version 6.1.5 09/07/2011 00:12 (sjfnl003) $
+          : sub-version  IC6.1.5.500.6 
+Started at: 23-Sep-2020  12:46:55
+User Name : chmaxwell
+Host Name : vlsicad2.ecs.umass.edu
+Directory : /home/ece658_2020/chmaxwell
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-20): Output Stream file '/home/ece658_2020/chmaxwell/mux.calibre.db' already exists. It will be overwritten.
+INFO (XSTRM-288): The automatic layer mapping is done by StreamOut and the xStrmOut_layerMap.txt file is generated. This is because either the layer mapping is not provided or the XST_AUTO_LM value is used with the -layerMap option.
+INFO (XSTRM-162): You have not used the viaMap option. If the OpenAccess design has native oaVia instances, use the -viaMap option for preserving oaVia instances in a Stream Out - Stream In round trip. Using the -viaMap option improves performance and VM usage of applications using the Streamed-In design.  For details on the viaMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+
+Summary of Options :
+library                                 gates
+strmFile                                /home/ece658_2020/chmaxwell/mux.calibre.db
+topCell                                 mux
+view                                    layout
+runDir                                  /home/ece658_2020/chmaxwell/
+logFile                                 PIPO.LOG.mux
+case                                    Preserve
+convertDot                              node
+
+INFO (XSTRM-223): 1. Translating cellView NCSU_TechLib_FreePDK45/M2_M1/layout as STRUCTURE M2_M1_0
+INFO (XSTRM-223): 2. Translating cellView NCSU_TechLib_FreePDK45/PTAP/layout as STRUCTURE PTAP_1
+INFO (XSTRM-223): 3. Translating cellView NCSU_TechLib_FreePDK45/NTAP/layout as STRUCTURE NTAP_2
+INFO (XSTRM-223): 4. Translating cellView NCSU_TechLib_FreePDK45/M1_POLY/layout as STRUCTURE M1_POLY_3
+INFO (XSTRM-223): 5. Translating cellView gates/mux/layout as STRUCTURE mux
+INFO (XSTRM-180): You have not used the objectMap option. The design has instance(s) of at least one of following OpenAccess objects: oaBlockage, oaBoundary, oaRow, and oaMarker. Any information about these objects will not be translated into the generated stream file. Use the objectMap option to translate/preserve these objects using XStream. For details on the objectMap option, refer to the "Design Data Translator's Reference" guide for XStream.
+INFO (XSTRM-223): 6. Translating cellView NCSU_TechLib_FreePDK45/nmos_vtl/layout as STRUCTURE nmos_vtl_0
+INFO (XSTRM-223): 7. Translating cellView NCSU_TechLib_FreePDK45/pmos_vtl/layout as STRUCTURE pmos_vtl_1
+INFO (XSTRM-223): 8. Translating cellView NCSU_TechLib_FreePDK45/nmos_vtl/layout as STRUCTURE nmos_vtl_2
+INFO (XSTRM-223): 9. Translating cellView NCSU_TechLib_FreePDK45/dcont/layout as STRUCTURE dcont_3
+
+Summary of Objects Translated:
+	Scalar Instances:                       17
+	Array Instances:                        0
+	Polygons:                               0
+	Paths:                                  30
+	Rectangles:                             63
+	Lines:                                  0
+	Arcs:                                   0
+	Donuts:                                 0
+	Dots:                                   0
+	Ellipses:                               0
+	Boundaries:                             0
+	Area Blockages:                         0
+	Layer Blockages:                        0
+	Area Halos:                             0
+	Markers:                                0
+	Rows:                                   0
+	Standard Vias                           58
+	Custom Vias:                            0
+	Pathsegs:                               0
+	Text:                                   14
+	Cells:                                  9
+
+Elapsed Time: 0.7s   User Time: 0.9s   CPU Time: 0.0s   Peak VM: 641KB
+INFO (XSTRM-234): Translation completed. '0' error(s) and '1' warning(s) found.

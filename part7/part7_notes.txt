@@ -1,0 +1,5 @@
+feature size		= 50nm
+lambda			= 25nm
+cell height		= 128lmb * 25nm = 3200nm = 3.2um
+height VDD & GND	= 20lmb * 25nm = 500nm = .5um
+ 	

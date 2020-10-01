@@ -1,0 +1,56 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  gates
+* Top Cell Name: mux
+* View Name:     schematic
+* Netlisted on:  Sep 23 12:47:04 2020
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: gates
+* Cell Name:    not
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT not A GND VDD Y
+*.PININFO A:I GND:I VDD:I Y:O
+MM0 Y A GND GND NMOS_VTL W=90n L=50n m=1
+MM1 Y A VDD VDD PMOS_VTL W=180.0n L=50n m=1
+.ENDS
+
+************************************************************************
+* Library Name: gates
+* Cell Name:    nand
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT nand A B GND VDD Y
+*.PININFO A:I B:I GND:I VDD:I Y:O
+MM1 Y A net16 GND NMOS_VTL W=90n L=50n m=1
+MM0 net16 B GND GND NMOS_VTL W=90n L=50n m=1
+MM3 Y B VDD VDD PMOS_VTL W=180.0n L=50n m=1
+MM2 Y A VDD VDD PMOS_VTL W=180.0n L=50n m=1
+.ENDS
+
+************************************************************************
+* Library Name: gates
+* Cell Name:    mux
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mux A B GND S VDD Y
+*.PININFO A:I B:I GND:I S:I VDD:I Y:O
+XI0 S GND VDD net18 / not
+XI4 S B GND VDD net21 / nand
+XI6 net22 net21 GND VDD Y / nand
+XI5 A net18 GND VDD net22 / nand
+.ENDS
+

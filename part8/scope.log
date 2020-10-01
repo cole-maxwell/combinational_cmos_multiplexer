@@ -1,0 +1,385 @@
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 1536x812+0+923
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry . 1536x812+8+923
+Mdi:ArrangeIcons
+wm geometry . 1536x812+0+923
+Mdi:ArrangeIcons
+wm geometry . 1536x812+8+923
+Mdi:ArrangeIcons
+wm geometry . 1536x812+0+923
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ece658_2020/chmaxwell/mux.pex.tr0 1 openonly
+# PF:1
+Mdi:ArrangeIcons
+wm geometry .sigmgr 376x204+646+1029
+wm geometry .sigmgr._PF:1 345x319+1235+931
+wm geometry .sigmgr._PF:1 345x319+1081+1184
+pf:read PF:1 v(a) v(b) v(s) v(y) v(vdd)
+# WF:1:1 WF:1:2 WF:1:3 WF:1:4 WF:1:5
+Graph addsignal {WF:1:1 WF:1:2 WF:1:3 WF:1:4 WF:1:5} -region {new new new new new} -yview {real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4
+Mdi:Resize 693 607
+Mdi:Move 5 5
+wm geometry .sigmgr 376x204+788+1023
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+wm geometry .sigmgr 376x204+1150+1002
+wm geometry .sigmgr._PF:1 231x319+1349+882
+Mdi:ArrangeIcons
+wm geometry .sigmgr 376x204+646+1029
+wm geometry .sigmgr._PF:1 345x319+1235+931
+wm geometry .sigmgr._PF:1 345x319+1081+1184
+wm geometry .sigmgr 376x204+788+1023
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig {Signal2 Signal1} -region {0 0} -rgnindex {1 2}
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 0 -rgnindex 3
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph sigconfig Signal4 -region 0 -rgnindex 4
+Mdi:Resize 722 590
+Mdi:Move 5 5
+Graph:DSel
+Mdi:Resize 613 480
+Mdi:Move 5 5
+Mdi:Move 134 130
+wm geometry .sigmgr._PF:1 345x357+1081+1146
+wm geometry .sigmgr._PF:1 345x357+925+1315
+wm geometry .sigmgr._PF:1 345x319+1081+1184
+wm geometry .sigmgr._PF:1 345x357+1081+1146
+wm geometry .sigmgr._PF:1 345x357+925+1315
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+GrMeas:Delay Graph0 Signal3 Signal2 either either default default default default 0.5 0.5 xyrangeAll
+# M:0
+Graph:DSel
+GrMeas:Select Graph0 M:0 4
+GrMeas:MoveText Graph0 M:0 4 90.0 16.0
+Graph:DSel
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal4
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ece658_2020/chmaxwell/mux.pex.tr0 1 openonly
+# PF:2
+wm geometry .sigmgr._PF:2 301x429+1279+931
+wm geometry .sigmgr._PF:2 301x427+1279+933
+wm geometry .sigmgr._PF:2 301x427+823+1273
+pf:read PF:2 v(a) v(b) v(s) v(y)
+# WF:2:1 WF:2:2 WF:2:3 WF:2:4
+Graph addsignal {WF:2:1 WF:2:2 WF:2:3 WF:2:4} -region {new new new new} -yview {real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3
+wm geometry .sigmgr._PF:2 301x429+1279+931
+wm geometry .sigmgr._PF:2 301x427+1279+933
+wm geometry .sigmgr._PF:2 301x427+823+1273
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig Signal2 -region 0 -rgnindex 1
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 2
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 0 -rgnindex 3
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+Graph0 delsignal Signal3
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ece658_2020/chmaxwell/mux.pex.tr0 1 openonly
+# PF:3
+wm geometry .sigmgr._PF:3 358x319+1222+931
+wm geometry .sigmgr._PF:3 358x319+932+1245
+GrXY:NewGraph
+# Graph1
+pf:read PF:3 v(a) v(b) v(s) v(vdd) v(y)
+# WF:3:1 WF:3:2 WF:3:3 WF:3:4 WF:3:5
+Mdi:ArrangeIcons
+Graph addsignal {WF:3:1 WF:3:2 WF:3:3 WF:3:4 WF:3:5} -region {new new new new new} -yview {real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4
+Mdi:ArrangeIcons
+Mdi:Resize 688 621
+Mdi:Move 5 5
+Graph:Select Graph1
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Mdi:ArrangeIcons
+Graph sigconfig Signal2 -region 0 -rgnindex 1
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 2
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 0 -rgnindex 3
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph sigconfig {Signal4 Signal3} -region {0 0} -rgnindex {3 4}
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:Resize 603 496
+Mdi:Move 5 5
+Mdi:Move 116 123
+Mdi:Move 96 84
+Graph:DSel
+Mdi:ArrangeIcons
+GrMeas:Delay Graph1 Signal4 Signal2 either either default default default default 0.5 0.5 xyrangeAll
+# M:0
+Graph:DSel
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0 {{(1) mux.pex.tr0}}
+Graph1 delsignal Signal0
+Graph1 delsignal Signal1
+Graph1 delsignal Signal3
+Graph1 delsignal Signal2
+Graph1 delsignal Signal4
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ece658_2020/chmaxwell/mux.pex.tr0 1 openonly
+# PF:4
+wm geometry .sigmgr._PF:4 353x319+1227+931
+wm geometry .sigmgr._PF:4 353x319+914+1204
+pf:read PF:4 v(a) v(b) v(s) v(vdd) v(y)
+# WF:4:1 WF:4:2 WF:4:3 WF:4:4 WF:4:5
+Graph addsignal {WF:4:1 WF:4:2 WF:4:3 WF:4:4 WF:4:5} -region {new new new new new} -yview {real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4
+wm geometry .sigmgr._PF:4 353x319+1227+931
+wm geometry .sigmgr._PF:4 353x319+914+1204
+Mdi:Move 76 56
+Mdi:Resize 687 556
+Mdi:Move 76 56
+Mdi:Resize 735 611
+Mdi:Move 76 56
+Mdi:Move 27 38
+wm geometry .sigmgr 376x204+833+1023
+Graph:Select Graph1
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+wm geometry .sigmgr 376x204+788+1023
+Mdi:ArrangeIcons
+wm geometry .sigmgr 376x204+833+1023
+Graph sigconfig Signal2 -region 0 -rgnindex 1
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 2
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 0 -rgnindex 3
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph sigconfig {Signal4 Signal3} -region {0 0} -rgnindex {3 4}
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:Resize 708 483
+Mdi:Move 27 38
+Mdi:Move 60 76
+Graph:DSel
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+GrMeas:Risetime Graph1 Signal4 {0.2 0.5 0.8} default default xyrangeAll
+# M:1
+Graph:DSel
+GrMeas:Select Graph1 M:1 4
+GrMeas:MoveText Graph1 M:1 4 47.0 19.0
+Graph:DSel
+Mdi:Resize 599 483
+Mdi:Move 60 76
+Mdi:Move 112 75
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0 {{(1) mux.pex.tr0}}
+Graph1 delsignal Signal0
+Graph1 delsignal Signal1
+Graph1 delsignal Signal2
+Graph1 delsignal Signal3
+Graph1 delsignal Signal4
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/ece658_2020/chmaxwell/mux.pex.tr0 1 openonly
+# PF:5
+wm geometry .sigmgr._PF:5 349x319+1231+931
+wm geometry .sigmgr._PF:5 349x292+1231+958
+wm geometry .sigmgr._PF:5 349x292+954+1142
+pf:read PF:5 v(a) v(b) v(s) v(vdd) v(y)
+# WF:5:1 WF:5:2 WF:5:3 WF:5:4 WF:5:5
+Graph addsignal {WF:5:1 WF:5:2 WF:5:3 WF:5:4 WF:5:5} -region {new new new new new} -yview {real(y) real(y) real(y) real(y) real(y)} -xview {real(x) real(x) real(x) real(x) real(x)} -tracehi {2 2 2 2 2}
+# Signal0 Signal1 Signal2 Signal3 Signal4
+wm geometry .sigmgr._PF:5 349x319+1231+931
+wm geometry .sigmgr._PF:5 349x292+1231+958
+wm geometry .sigmgr._PF:5 349x292+954+1142
+Mdi:Resize 685 560
+Mdi:Move 112 75
+Graph:Select Graph1
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Mdi:ArrangeIcons
+Graph sigconfig Signal2 -region 0 -rgnindex 1
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 2
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal4 add
+# Signal4
+Graph sigconfig Signal4 -region 0 -rgnindex 3
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 0 -rgnindex 4
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:Resize 586 468
+Mdi:Move 112 75
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+GrMeas:Falltime Graph1 Signal4 {0.2 0.5 0.8} default default xyrangeAll
+# M:2
+Graph:DSel
+GrMeas:Select Graph1 M:2 4
+GrMeas:MoveText Graph1 M:2 4 39.0 -31.0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph1 M:2 4
+GrMeas:MoveText Graph1 M:2 4 26.0 -37.0
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+ScopeSigMgr:Unload 0 {{(1) mux.pex.tr0}}
+Graph1 delsignal Signal0
+Graph1 delsignal Signal1
+Graph1 delsignal Signal2
+Graph1 delsignal Signal3
+Graph1 delsignal Signal4
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons
+Mdi:ArrangeIcons

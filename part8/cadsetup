@@ -1,0 +1,134 @@
+##################################################################### 
+# Please source this file. Don't just excute it. 
+#
+# A correct way: source setup.csh
+# A wrong way  : tcsh setup.csh
+# 
+
+#////////////////////////////////////////////////////////////////////
+# General 
+#////////////////////////////////////////////////////////////////////
+
+setenv TERM $term
+alias prepend 'if (-d \!:2) if ("$\!:1" \!~ *"\!:2"*) setenv \!:1 "\!:2":${\!:1}'
+alias extend  'if (-d \!:2) if ("$\!:1" \!~ *"\!:2"*) setenv \!:1 ${\!:1}:\!:2'
+
+
+#////////////////////////////////////////////////////////////////////
+# Cadence setup
+#////////////////////////////////////////////////////////////////////
+
+# cadence license #
+setenv CDS_LIC_FILE 5280@vlsicad2.ecs.umass.edu
+
+# cadence base directory #
+setenv CDS_INST_DIR /opt/cadence
+
+# IBM PDK specific #
+setenv CDS_Netlisting_Mode Analog
+setenv SPECTRE_DEFAULTS -E
+
+# IC #
+setenv IC $CDS_INST_DIR/installs/ic
+extend PATH $IC/tools/bin
+extend PATH $IC/tools/dfII/bin
+extend PATH $IC/tools/dracula/bin
+extend PATH $IC/tools/gcf/bin
+extend PATH $IC/tools/jre/bin
+extend PATH $IC/tools/leapfrog/bin
+extend PATH $IC/tools/modelwriter/bin
+extend PATH $IC/tools/pearl/bin
+extend PATH $IC/tools/perl/bin
+extend PATH $IC/tools/plot/bin
+extend PATH $IC/tools/tlfUtil/bin
+setenv SYSTEM_CDS_LIB_DIR $IC/tools/dfII/samples
+setenv LD_LIBRARY_PATH $IC/tools/lib
+
+# MMSIM #
+setenv MMSIM $CDS_INST_DIR/installs/mmsim
+extend PATH $MMSIM/tools/bin
+extend PATH $MMSIM/tools/spectre/bin
+prepend LD_LIBRARY_PATH $MMSIM/tools/lib
+
+# IUS #
+setenv IUS $CDS_INST_DIR/installs/ius
+extend PATH $IUS/tools/verilog/bin
+extend PATH $IUS/tools/simvision/bin
+extend PATH $IUS/tools/nclaunch/bin
+prepend LD_LIBRARY_PATH $IUS/tools/bin
+
+# Encounter Base Directory #
+set path=(/opt/cadence/installs/EDI110/bin $path)
+
+# INCISIVE Setup #
+#set path = (/opt/cadence/installs/incisiv/bin /opt/cadence/installs/incisiv/tools/bin /opt/cadence/installs/incisiv/tools/cdsgcc/gcc/bin $path)
+#setenv SOCV_KIT_HOME /opt/cadence/installs/incisiv/kits/VerificationKit
+#source $SOCV_KIT_HOME/env.csh
+
+#### PureView & Memory Model #####
+#setenv DENALI /opt/cadence/installs/VIPCAT113/tools
+#set path=(/opt/cadence/installs/VIPCAT113/bin $path)
+#set path=(/opt/cadence/installs/VIPCAT113/tools/bin $path)
+
+
+
+#////////////////////////////////////////////////////////////////////
+#  MENTORGRAPHICS SETUP
+#////////////////////////////////////////////////////////////////////
+
+# Mentor base directory #
+setenv MENTOR /opt/mentor
+
+# Mentor license #
+setenv MGLS_LICENSE_FILE 27020@vlsicad2.ecs.umass.edu
+
+# ModelSim #
+extend PATH $MENTOR/modelsim/modeltech/bin
+
+# Calibre #
+setenv CALIBRE $MENTOR/calibre
+setenv MGC_HOME $MENTOR/calibre/cal
+extend PATH $MENTOR/calibre/cal/bin
+
+
+#////////////////////////////////////////////////////////////////////
+#  SYNOPSYS SETUP
+#////////////////////////////////////////////////////////////////////
+
+setenv SYNOPSYS /usr/synopsys
+
+# Synopsys License #
+setenv SNPSLMD_LICENSE_FILE 27000@vlsicad2.ecs.umass.edu
+
+# Synopsys Installer for Installation #
+set path=($SYNOPSYS/installer $path)
+
+# Hspice setup path #
+set path=($SYNOPSYS/hspice/hspice/bin $path)
+
+# Cosmoscope Setup #
+set path =(/opt/Synopsys/CosmosScope/F-2011.09/ai_bin $path)
+
+# Design Compiler Setup #
+set path= ($SYNOPSYS/E-2010.12-SP5-2/bin $path)
+
+# Primetime setup #
+set path = ($SYNOPSYS/primetime_install/F-2011.12/bin $path)
+
+# IC Compiler setup #
+set path = ($SYNOPSYS/L-2016.03-SP5-2-new/bin $path)
+
+# VCS #
+setenv VCS_HOME /usr/synopsys/F-2011.12
+set path = (/usr/synopsys/F-2011.12/linux/bin $path)
+
+
+#////////////////////////////////////////////////////////////////////
+# NCSU FreePDK45 setup
+#////////////////////////////////////////////////////////////////////
+
+source $CDS_INST_DIR/FreePDK45/FreePDK45/ncsu_basekit/cdssetup/icoa_setup.csh
+source $CDS_INST_DIR/FreePDK45/FreePDK45/ncsu_basekit/cdssetup/setup.csh
+
+
+

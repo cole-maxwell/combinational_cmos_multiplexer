@@ -1,0 +1,5 @@
+
+Cellview (mux layout) from lib (gates) is saved in the panic file
+    (/home/ece658_2020/chmaxwell/gates/mux/layout/layout.oa)
+To recover do:
+    dbOpenPanicCellView("gates" "mux" "layout")

@@ -1,0 +1,17 @@
+xi24 y gnd vdd not
+xi23 y gnd vdd not
+xi22 y gnd vdd not
+xi21 y gnd vdd not
+xi20 y gnd vdd not
+xi19 y gnd vdd not
+xi18 y gnd vdd not
+xi17 y gnd vdd not
+xi16 y gnd vdd not
+xi15 y gnd vdd not
+xi14 y gnd vdd not
+xi13 y gnd vdd not
+xi12 y gnd vdd not
+xi11 y gnd vdd not
+xi10 y gnd vdd not
+xi9 y gnd vdd not
+c0 y gnd 7e-15

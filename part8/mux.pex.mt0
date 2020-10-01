@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='E-2010.12-SP2 32-BIT'
+.TITLE '** mux.pex.netlist'
+ tf_011-001       temper           alter#            
+  1.933e-10        2.500e+01       1                 
